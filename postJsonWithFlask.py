@@ -11,5 +11,3 @@ def PostWithJson():
     headers = {'Content-Type' : 'application/json'}
     r = requests.post(url = 'http://127.0.0.1:5000/helpneeded', json = patient, headers = headers )
     return r
-
-PostWithJson()
