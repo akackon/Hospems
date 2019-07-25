@@ -1,4 +1,4 @@
-from flask import request, url_for,jsonify
+from flask import request, url_for,jsonify, render_template
 from flask_api import FlaskAPI, status, exceptions
 from datetime import datetime
 
@@ -21,6 +21,9 @@ patients = [{
     'Status' : 'Pending'
 }]
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 #Getting the list of all the patients
 @app.route('/helpneeded', methods = ['GET'])
 def returnPatients():
