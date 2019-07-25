@@ -8,7 +8,7 @@ button = Button(2)
 buzzer = Buzzer(17)
 
 def pressButton():
-    buzzer.on()
+    buzzer.beep()
     PostWithJson()
     time.sleep(5)
     buzzer.off()
