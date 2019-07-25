@@ -1,5 +1,6 @@
 from gpiozero import Button, Buzzer
 from postJsonWithFlask import PostWithJson
+import time
 
 global button
 global buzzer
@@ -9,8 +10,9 @@ buzzer = Buzzer(17)
 def pressButton():
     buzzer.on()
     PostWithJson()
+    time.sleep(5)
     buzzer.off()
-    return "Posted Successfully"
+    print ("Posted Successfully")
 
 while True:
     button.when_pressed = pressButton
